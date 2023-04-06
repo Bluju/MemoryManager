@@ -42,8 +42,10 @@ int main() {
             ifstream backingStore ("BACKING_STORE.bin");//ios::out|ios::binary|ios::ate
             backingStore.seekg(pageNumber*256);
             backingStore.read(buffer,sizeof(buffer));
+            //write a copy of the page to the frame in memory
             for(int i = 0; i < 256; i++){
                 memory[nextFrame * 256 + i] = static_cast<int>(buffer[i]);
+                
             }
             pageTable[pageNumber] = nextFrame;
             nextFrame++;
