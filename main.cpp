@@ -55,7 +55,7 @@ int main() {
         //printf("frameNumber: %d\n",frameNumber);
         physicalAddress = frameNumber * 256 + offset;
         value = memory[physicalAddress];
-        printf("Virtual address: %d Physical Address: %d Value: %d\n", virtualAddress, physicalAddress, value);
+        printf("Virtual address: %d Physical Address: %d Value: %d\n", virtualAddress, physicalAddress, (int)(signed char)value);
 
     }
     return 0;
